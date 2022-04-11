@@ -10,8 +10,8 @@
     "lint": "eslint --ext .jsx,.js,.ts,.tsx ./src  --cache",
     "lint:fix": "npm run lint -- --fix",
     "type:check": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve  --open --mode=development",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "validate": "run-p lint type:check format:check",
     "prepare": "husky install"
   },
