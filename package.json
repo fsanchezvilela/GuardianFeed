@@ -1,0 +1,60 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Thank you for your interest in EnjoyHQ. We don't like puzzles and tricky questions, so we based all tasks on real-life problems we had to solve when building EnjoyHQ.",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier . --ignore-path .gitignore",
+    "format:check": "npm run prettier -- --check",
+    "format:fix": "npm run prettier -- --write",
+    "lint": "eslint --ext .jsx,.js,.ts,.tsx ./src  --cache",
+    "lint:fix": "npm run lint -- --fix",
+    "type:check": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve  --open --mode=development",
+    "validate": "run-p lint type:check format:check",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-redux": "^7.1.20",
+    "@types/react-router-dom": "^5.1.8",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "css-loader": "^6.2.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint-plugin-security": "^1.4.0",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.2",
+    "style-loader": "^3.2.1",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.1.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.5",
+    "react-router-dom": "^5.2.1",
+    "redux": "^4.1.1"
+  },
+  "lint-staged": {
+    "*.{jsx,js,ts,tsx}": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
